@@ -1,4 +1,85 @@
 
+
+
+> Build a scaleable API with authentication using Express, Mongo, and Passport
+Learn the differences between cookie-based and token-based authentication
+Figure out what a Higher Order Component and how to use it to write dramatically less code
+Write Redux middleware from scratch to uncover what is happening behind the scenes with Redux
+Set up your own testing environment with Jest and Enzyme
+Realize the power of building composable components
+
+#### Higher Order Components
+
+* An Introduction to Higher Order Components
+
+* Connect - A Higher Order Component
+
+* App Overview
+
+* Adding React Router
+
+* Adding Routes
+
+* Auth Reducer
+
+* Rendering a Header
+
+* Wiring Up State
+
+* Changing Auth State
+
+* Steps for Building a HOC
+
+* Forced Navigation with React Router
+
+* Creating the HOC
+
+* Placing Reusable Logic
+
+* Passing Through Props
+
+#### MIddlewares with Redux
+* Introduction to Middlewares
+
+* The Purpose of Redux Promise
+
+* How Async Middlewares Work
+
+* Crazy Middleware Syntax
+
+* Forwarding Actions
+
+* Waiting for Promise Resolution
+
+* Observing the Middleware
+
+* State Validation Middleware
+
+* JSON Schema
+
+* Generating JSON Schema
+
+* Middleware Creation
+
+* Emitting Warnings
+
+#### Server Setup - Authentication
+* 
+* Client Side Auth
+* 
+* Bonus!
+* 
+* [Legacy] Testing
+* 
+* [Legacy] Test Environment Setup
+* 
+* [Legacy] Higher Order Components
+* 
+* [Legacy] Middleware
+* 
+* [Legacy] Client Side Authentication
+
+
 –
 Getting Started
 39:17
