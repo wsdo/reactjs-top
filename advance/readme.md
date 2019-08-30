@@ -1,0 +1,3 @@
+## fewiki init
+
+> author: stark
