@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>07.redux与react配合使用 | reactjs 完全指南</title>
+    <meta name="description" content="汇聚前端技术、规范、效率、架构">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.5e95ad3b.css" as="style"><link rel="preload" href="/assets/js/app.b9f870b7.js" as="script"><link rel="preload" href="/assets/js/2.f9a3e743.js" as="script"><link rel="preload" href="/assets/js/23.d604f77d.js" as="script"><link rel="prefetch" href="/assets/js/10.ae044730.js"><link rel="prefetch" href="/assets/js/11.7d638071.js"><link rel="prefetch" href="/assets/js/12.1ddc94e0.js"><link rel="prefetch" href="/assets/js/13.4ed6b716.js"><link rel="prefetch" href="/assets/js/14.49de9dfc.js"><link rel="prefetch" href="/assets/js/15.588eb59e.js"><link rel="prefetch" href="/assets/js/16.8722d8ae.js"><link rel="prefetch" href="/assets/js/17.eec6510f.js"><link rel="prefetch" href="/assets/js/18.2f3de200.js"><link rel="prefetch" href="/assets/js/19.8f7e3375.js"><link rel="prefetch" href="/assets/js/20.e2321822.js"><link rel="prefetch" href="/assets/js/21.e3257228.js"><link rel="prefetch" href="/assets/js/22.1e50700e.js"><link rel="prefetch" href="/assets/js/24.4e553edc.js"><link rel="prefetch" href="/assets/js/25.1d906f8a.js"><link rel="prefetch" href="/assets/js/26.ea670b54.js"><link rel="prefetch" href="/assets/js/27.255a199a.js"><link rel="prefetch" href="/assets/js/28.f09811e2.js"><link rel="prefetch" href="/assets/js/29.76b49c1f.js"><link rel="prefetch" href="/assets/js/3.8bf2662c.js"><link rel="prefetch" href="/assets/js/30.8dea05a0.js"><link rel="prefetch" href="/assets/js/31.8c7b5bba.js"><link rel="prefetch" href="/assets/js/32.719a650c.js"><link rel="prefetch" href="/assets/js/33.73fe6f9b.js"><link rel="prefetch" href="/assets/js/34.844b8ea9.js"><link rel="prefetch" href="/assets/js/4.52824b00.js"><link rel="prefetch" href="/assets/js/5.0f0d022e.js"><link rel="prefetch" href="/assets/js/6.12c9f679.js"><link rel="prefetch" href="/assets/js/7.4f38631c.js"><link rel="prefetch" href="/assets/js/8.dd38b500.js"><link rel="prefetch" href="/assets/js/9.93ceb9ff.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5e95ad3b.css">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?8c5a01a7690cba576b8dcd4d106c0169";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">reactjs 完全指南</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/base/" class="nav-link">基础教程</a></div><div class="nav-item"><a href="/docs/advance/" class="nav-link">进阶</a></div><div class="nav-item"><a href="/docs/api/" class="nav-link">接口</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">redux</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/redux/base/" class="nav-link router-link-active">基础</a></li></ul></div></div> <a href="https://github.com/wsdo/gitfe" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/base/" class="nav-link">基础教程</a></div><div class="nav-item"><a href="/docs/advance/" class="nav-link">进阶</a></div><div class="nav-item"><a href="/docs/api/" class="nav-link">接口</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">redux</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/redux/base/" class="nav-link router-link-active">基础</a></li></ul></div></div> <a href="https://github.com/wsdo/gitfe" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>基础</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/redux/base/" class="sidebar-link">【redux完全指南01】redux入门到会用</a></li><li><a href="/docs/redux/base/01.introduction.html" class="sidebar-link">01.课程介绍</a></li><li><a href="/docs/redux/base/02.redux-intro.html" class="sidebar-link">redux介绍</a></li><li><a href="/docs/redux/base/03.env.html" class="sidebar-link">环境准备</a></li><li><a href="/docs/redux/base/04.redux整体感知.html" class="sidebar-link">04.redux整体感知</a></li><li><a href="/docs/redux/base/05.通过subscribe订阅，实现redux数据响应.html" class="sidebar-link">05.通过subscribe订阅，实现redux数据响应</a></li><li><a href="/docs/redux/base/06.把课程项目推送到仓库.html" class="sidebar-link">06.把课程项目推送到仓库</a></li><li><a href="/docs/redux/base/07.redux与react配合使用.html" class="active sidebar-link">07.redux与react配合使用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/docs/redux/base/08.使用connect让react和redux更优雅的结合.html" class="sidebar-link">08.使用connect让react和redux更优雅的结合</a></li><li><a href="/docs/redux/base/09.使用react-thunk解决异步action问题.html" class="sidebar-link">09.使用react-thunk解决异步action问题</a></li><li><a href="/docs/redux/base/10.使用axios请求真实的api.html" class="sidebar-link">10.使用axios实现真实的api请求</a></li><li><a href="/docs/redux/base/11.把请求api数据渲染到页面上面.html" class="sidebar-link">11.拆分state把请求api文章列表，数据渲染到页面上</a></li><li><a href="/docs/redux/base/13.装饰器模式.html" class="sidebar-link">装饰器模式</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>api</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="row theme-gitfe-page"><div class="col-md-10"><div class="theme-gitfe-content content__default"><h2 id="_07-redux与react配合使用"><a href="#_07-redux与react配合使用" aria-hidden="true" class="header-anchor">#</a> 07.redux与react配合使用</h2> <h4 id="stark-redux-js"><a href="#stark-redux-js" aria-hidden="true" class="header-anchor">#</a> stark.redux.js</h4> <div class="language- extra-class"><pre class="language-text"><code>import { createStore } from 'redux'
+
+const EAT = 'eat'
+const HUNGRY = 'hungry'
+
+// reducer
+export const weight = (state = 160 , action) =&gt; {
+  switch (action.type) {
+    case EAT:
+      return state + 10
+    case HUNGRY:
+      return state - 10
+    default:
+      return 160
+  }
+}
+
+
+// action
+export const eat = () =&gt; {
+  console.log('stark wang 正在吃山珍海味')
+  return {type: EAT}
+}
+
+export const hungry = () =&gt; {
+  console.log('饿了一天')
+  return {type: HUNGRY}
+}
+
+</code></pre></div><h4 id="app-js"><a href="#app-js" aria-hidden="true" class="header-anchor">#</a> App.js</h4> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react'
+import logo from './logo.svg'
+import './App.css'
+import { eat, hungry } from './stark.redux'
+
+class App extends React.Component {
+  render () {
+    const store = this.props.store
+    const num = store.getState()
+    return (
+      &lt;div className='App'&gt;
+        &lt;header className='App-header'&gt;
+          &lt;img src={logo} className='App-logo' alt='logo' /&gt;
+          &lt;p&gt;
+            【redux完全指南】系列1：从入门到会用
+            &lt;br&gt;&lt;/br&gt;
+            hi gusy， I am stark
+          &lt;/p&gt;
+          &lt;a
+            className='App-link'
+            href='https://shudong.wang'
+            target='_blank'
+            rel='noopener noreferrer'&gt;跟着stark wang 学redux&lt;/a&gt;
+          &lt;h2&gt;stark wang 当前的体重为{num}斤&lt;/h2&gt;
+          &lt;button onClick={() =&gt; {store.dispatch(eat())}}&gt;
+            吃了一坨山珍海味
+          &lt;/button&gt;
+          &lt;button onClick={() =&gt; {store.dispatch(hungry())}}&gt;
+            饿了一天
+          &lt;/button&gt;
+        &lt;/header&gt;
+      &lt;/div&gt;
+    )
+  }
+
+}
+
+export default App
+
+</code></pre></div><h4 id="index-js"><a href="#index-js" aria-hidden="true" class="header-anchor">#</a> index.js</h4> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { createStore } from 'redux'
+import { weight } from './stark.redux'
+
+const store = createStore(weight)
+
+const render = () =&gt;{
+    ReactDOM.render(&lt;App store={store} /&gt;, document.getElementById('root'));
+}
+render()
+
+store.subscribe(render)
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
+
+
+</code></pre></div></div></div> <div class="col-md-2"><div class="gitfe-page-toc"><ul class="sidebar-links theme-gitfe-page-sider sidebar-sub-header"><li><a href="/docs/redux/base/07.redux%E4%B8%8Ereact%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8.html#07.redux与react配合使用">07.redux与react配合使用</a></li></ul></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com//wsdo/gitfe/edit/master/docs/redux/base/07.redux与react配合使用.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11 days ago</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/docs/redux/base/06.把课程项目推送到仓库.html" class="prev">06.把课程项目推送到仓库</a></span> <span class="next"><a href="/docs/redux/base/08.使用connect让react和redux更优雅的结合.html">08.使用connect让react和redux更优雅的结合</a>→
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b9f870b7.js" defer></script><script src="/assets/js/2.f9a3e743.js" defer></script><script src="/assets/js/23.d604f77d.js" defer></script>
+  </body>
+</html>
